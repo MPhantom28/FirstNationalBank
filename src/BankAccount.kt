@@ -1,4 +1,4 @@
-class BankAccount (_accountNumber: String, _name: String, _balance: Double){
+abstract class BankAccount (_accountNumber: String, _name: String, _balance: Double){
 
     //PROPERTIES
     //val cannot be changed
@@ -18,8 +18,8 @@ class BankAccount (_accountNumber: String, _name: String, _balance: Double){
         if (amount > 0) balance += amount
     }
 
-    fun withdraw (amount: Double) {
-        if (amount > 0 && amount <= balance) balance -= amount
+    open fun withdraw (amount: Double) {
+        if (amount > 0) balance -= amount
     }
 
 }
